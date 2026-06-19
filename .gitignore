@@ -1,0 +1,40 @@
+# Publish only the scripts needed to reproduce the experiment, plus one
+# results-summary JSON. Everything else (docs, tests, helpers, data, the
+# heavy regenerable artifacts, secrets) stays untracked.
+
+# Ignore every top-level entry by default …
+/*
+!/.gitignore
+
+# … re-include code/, the package folders, and the runner entry point.
+!/code/
+code/*
+!code/runner.py
+!code/common/
+!code/pipeline/
+!code/reporting/
+
+# common/: shared config and I/O helpers
+code/common/*
+!code/common/config.py
+!code/common/io_utils.py
+
+# pipeline/: the experiment stages
+code/pipeline/*
+!code/pipeline/data_prep.py
+!code/pipeline/chunkers.py
+!code/pipeline/retrieval.py
+!code/pipeline/generation.py
+!code/pipeline/efficiency.py
+!code/pipeline/analysis.py
+
+# reporting/: results consolidation
+code/reporting/*
+!code/reporting/results_summary.py
+
+# the single results JSON (un-ignore each directory on its path)
+!code/artifacts/
+code/artifacts/*
+!code/artifacts/analysis/
+code/artifacts/analysis/*
+!code/artifacts/analysis/results_summary.json

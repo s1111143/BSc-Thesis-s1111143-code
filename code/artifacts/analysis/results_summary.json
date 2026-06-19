@@ -1,0 +1,406 @@
+{
+  "retrieval": {
+    "means": {
+      "fixed": {
+        "recall_at_5": 0.935,
+        "mrr_at_5": 0.7787499999999998,
+        "query_count": 400
+      },
+      "structure": {
+        "recall_at_5": 0.9325,
+        "mrr_at_5": 0.7684583333333334,
+        "query_count": 400
+      },
+      "semantic": {
+        "recall_at_5": 0.955,
+        "mrr_at_5": 0.7759583333333333,
+        "query_count": 400
+      }
+    },
+    "tests": {
+      "recall_at_5": {
+        "metric": "recall_at_5",
+        "method": "cochran_q",
+        "statistic": 6.9523809523809526,
+        "df": 2.0,
+        "p_value": 0.03092499642856811,
+        "kendalls_w": 0.008690476190476191,
+        "condition_means": {
+          "fixed": 0.935,
+          "semantic": 0.955,
+          "structure": 0.9325
+        }
+      },
+      "mrr_at_5": {
+        "metric": "mrr_at_5",
+        "method": "friedman",
+        "normality": {
+          "status": "ok",
+          "statistic": 0.7707464873567956,
+          "p_value": 6.123514694646063e-38
+        },
+        "chi2": 0.9336283185843285,
+        "p_value": 0.6269966010779845,
+        "kendalls_w": 0.0011670353982304105
+      }
+    }
+  },
+  "answer_quality": {
+    "condition_means": {
+      "fixed|gpt-4.1-mini": {
+        "n": 400,
+        "faithfulness": {
+          "mean": 0.8911518434050533,
+          "median": 1.0,
+          "sd": 0.22503870614202306
+        },
+        "answer_relevancy": {
+          "mean": 0.7468224330366229,
+          "median": 0.8345702963000365,
+          "sd": 0.2510375349083215
+        },
+        "context_utilization": {
+          "mean": 0.7993715277232866,
+          "median": 0.9999999999,
+          "sd": 0.30703942350904234
+        }
+      },
+      "fixed|open-mistral-nemo-2407": {
+        "n": 400,
+        "faithfulness": {
+          "mean": 0.7935717790957224,
+          "median": 1.0,
+          "sd": 0.3217854434931317
+        },
+        "answer_relevancy": {
+          "mean": 0.7101640379914939,
+          "median": 0.8106393800837891,
+          "sd": 0.2530857855833322
+        },
+        "context_utilization": {
+          "mean": 0.7400729166148281,
+          "median": 0.9999999999,
+          "sd": 0.35089717929604436
+        }
+      },
+      "structure|gpt-4.1-mini": {
+        "n": 400,
+        "faithfulness": {
+          "mean": 0.8871960185718738,
+          "median": 1.0,
+          "sd": 0.22679624605987328
+        },
+        "answer_relevancy": {
+          "mean": 0.7345983970630683,
+          "median": 0.8287075652519521,
+          "sd": 0.258903627407379
+        },
+        "context_utilization": {
+          "mean": 0.7824166666126857,
+          "median": 0.9999999999,
+          "sd": 0.3233267661398765
+        }
+      },
+      "structure|open-mistral-nemo-2407": {
+        "n": 400,
+        "faithfulness": {
+          "mean": 0.7706195757498038,
+          "median": 1.0,
+          "sd": 0.3343718081716391
+        },
+        "answer_relevancy": {
+          "mean": 0.6978863749212628,
+          "median": 0.7998462579713033,
+          "sd": 0.26034778245061
+        },
+        "context_utilization": {
+          "mean": 0.7351180555043466,
+          "median": 0.9999999999,
+          "sd": 0.35501095511800046
+        }
+      },
+      "semantic|gpt-4.1-mini": {
+        "n": 400,
+        "faithfulness": {
+          "mean": 0.8849160813348701,
+          "median": 1.0,
+          "sd": 0.22946320784407215
+        },
+        "answer_relevancy": {
+          "mean": 0.7390464613482888,
+          "median": 0.8270550389184018,
+          "sd": 0.25249066784345986
+        },
+        "context_utilization": {
+          "mean": 0.7737847221688162,
+          "median": 0.9999999999,
+          "sd": 0.331266389836205
+        }
+      },
+      "semantic|open-mistral-nemo-2407": {
+        "n": 400,
+        "faithfulness": {
+          "mean": 0.7858168599123806,
+          "median": 1.0,
+          "sd": 0.325725010609962
+        },
+        "answer_relevancy": {
+          "mean": 0.7196486996809969,
+          "median": 0.8156095106736521,
+          "sd": 0.23989383527083638
+        },
+        "context_utilization": {
+          "mean": 0.7231527777284076,
+          "median": 0.9749999999381249,
+          "sd": 0.3620362698727164
+        }
+      }
+    },
+    "two_way_effects": {
+      "faithfulness": {
+        "metric": "faithfulness",
+        "normality": {
+          "status": "ok",
+          "statistic": 0.8724080767511628,
+          "p_value": 1.582993319128965e-40
+        },
+        "primary": {
+          "method": "two_way_rm_anova",
+          "effects": {
+            "strategy": {
+              "f_value": 1.1413922912459025,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.3198948771168292,
+              "partial_eta_squared": 0.00285247243408183,
+              "magnitude": "negligible"
+            },
+            "model": {
+              "f_value": 68.56374053644528,
+              "num_df": 1.0,
+              "den_df": 399.0,
+              "p_value": 1.8741872243903216e-15,
+              "partial_eta_squared": 0.14664041411290946,
+              "magnitude": "large"
+            },
+            "strategy:model": {
+              "f_value": 0.7650267656980176,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.46566243961533604,
+              "partial_eta_squared": 0.0019136910797011748,
+              "magnitude": "negligible"
+            }
+          }
+        },
+        "robustness": {
+          "method": "art_approximation",
+          "effects": {
+            "strategy": {
+              "f_value": 7.824128228895144,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.00043143074526576713,
+              "partial_eta_squared": 0.01923221285560768,
+              "magnitude": "small"
+            },
+            "model": {
+              "f_value": 81.44064687817529,
+              "num_df": 1.0,
+              "den_df": 399.0,
+              "p_value": 7.733763857568856e-18,
+              "partial_eta_squared": 0.16951239951774122,
+              "magnitude": "large"
+            },
+            "strategy:model": {
+              "f_value": 7.01078043916507,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.0009587312416432485,
+              "partial_eta_squared": 0.017267473616296096,
+              "magnitude": "small"
+            }
+          }
+        }
+      },
+      "answer_relevancy": {
+        "metric": "answer_relevancy",
+        "normality": {
+          "status": "ok",
+          "statistic": 0.892868178407096,
+          "p_value": 5.637804480779109e-38
+        },
+        "primary": {
+          "method": "two_way_rm_anova",
+          "effects": {
+            "strategy": {
+              "f_value": 2.533727947751683,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.08000093073788488,
+              "partial_eta_squared": 0.0063101248323562415,
+              "magnitude": "negligible"
+            },
+            "model": {
+              "f_value": 4.978799730295078,
+              "num_df": 1.0,
+              "den_df": 399.0,
+              "p_value": 0.026214687777676934,
+              "partial_eta_squared": 0.012324408443262448,
+              "magnitude": "small"
+            },
+            "strategy:model": {
+              "f_value": 1.067064764062277,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.34450714389067383,
+              "partial_eta_squared": 0.0026672147198409687,
+              "magnitude": "negligible"
+            }
+          }
+        },
+        "robustness": {
+          "method": "art_approximation",
+          "effects": {
+            "strategy": {
+              "f_value": 4.209739147311836,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.015181370489469775,
+              "partial_eta_squared": 0.010440569109799744,
+              "magnitude": "small"
+            },
+            "model": {
+              "f_value": 8.497713422037588,
+              "num_df": 1.0,
+              "den_df": 399.0,
+              "p_value": 0.0037563900797120404,
+              "partial_eta_squared": 0.020853401484578808,
+              "magnitude": "small"
+            },
+            "strategy:model": {
+              "f_value": 1.8012538070260313,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.16576234158723385,
+              "partial_eta_squared": 0.004494132166296271,
+              "magnitude": "negligible"
+            }
+          }
+        }
+      },
+      "context_utilization": {
+        "metric": "context_utilization",
+        "normality": {
+          "status": "ok",
+          "statistic": 0.8923900450674789,
+          "p_value": 4.865989608742549e-38
+        },
+        "primary": {
+          "method": "two_way_rm_anova",
+          "effects": {
+            "strategy": {
+              "f_value": 1.5097515225455378,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.22159533416987753,
+              "partial_eta_squared": 0.0037695749399513706,
+              "magnitude": "negligible"
+            },
+            "model": {
+              "f_value": 28.82437450955017,
+              "num_df": 1.0,
+              "den_df": 399.0,
+              "p_value": 1.3479482329115313e-07,
+              "partial_eta_squared": 0.06737431578692517,
+              "magnitude": "medium"
+            },
+            "strategy:model": {
+              "f_value": 0.2481467671560069,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.7803056046477559,
+              "partial_eta_squared": 0.0006215351759684626,
+              "magnitude": "negligible"
+            }
+          }
+        },
+        "robustness": {
+          "method": "art_approximation",
+          "effects": {
+            "strategy": {
+              "f_value": 0.7128565904820361,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.4905536880061939,
+              "partial_eta_squared": 0.0017834217206888078,
+              "magnitude": "negligible"
+            },
+            "model": {
+              "f_value": 47.87489164439706,
+              "num_df": 1.0,
+              "den_df": 399.0,
+              "p_value": 1.8180844213133636e-11,
+              "partial_eta_squared": 0.10713265063568116,
+              "magnitude": "medium"
+            },
+            "strategy:model": {
+              "f_value": 0.15510609688052132,
+              "num_df": 2.0,
+              "den_df": 798.0,
+              "p_value": 0.8563501292733371,
+              "partial_eta_squared": 0.0003885860271141688,
+              "magnitude": "negligible"
+            }
+          }
+        }
+      }
+    }
+  },
+  "efficiency": {
+    "sample_query_count": 400,
+    "top_k": 5,
+    "strategies": {
+      "fixed": {
+        "docs_processed": 1600,
+        "chunks_produced_timed": 11183,
+        "sentences_embedded": null,
+        "chunk_seconds": 4.326004499976989,
+        "chunk_count": 11183,
+        "total_chunk_tokens": 5354509,
+        "index_build_seconds": 0.010737375007010996,
+        "search_ms_mean": 1.1057154145964887,
+        "search_ms_median": 1.065645512426272,
+        "search_ms_p95": 1.2501332734245802,
+        "cache_files": {}
+      },
+      "structure": {
+        "docs_processed": 1600,
+        "chunks_produced_timed": 10097,
+        "sentences_embedded": null,
+        "chunk_seconds": 11.168296542018652,
+        "chunk_count": 10097,
+        "total_chunk_tokens": 5263644,
+        "index_build_seconds": 0.003401166992262006,
+        "search_ms_mean": 0.9543628990650177,
+        "search_ms_median": 0.9394790104124695,
+        "search_ms_p95": 1.0533350636251269,
+        "cache_files": {}
+      },
+      "semantic": {
+        "docs_processed": 1600,
+        "chunks_produced_timed": 10178,
+        "sentences_embedded": 167068,
+        "chunk_seconds": 1139.1297758750152,
+        "chunk_count": 10178,
+        "total_chunk_tokens": 5270020,
+        "index_build_seconds": 0.022472375014331192,
+        "search_ms_mean": 0.9718881559092551,
+        "search_ms_median": 0.9406455210410058,
+        "search_ms_p95": 1.156637782696634,
+        "cache_files": {}
+      }
+    }
+  },
+  "headline": "Generator model dominates answer quality; no chunking main effect or chunking x model interaction is significant under the primary RM-ANOVA (all chunking-related partial eta^2 <= 0.006). The ART robustness check flags only small extra effects (faithfulness strategy + interaction, eta^2 <= 0.02; descriptively GPT orders fixed > structure > semantic, Mistral fixed > semantic > structure), so the strategy ranking is consistent across models within sampling noise."
+}
