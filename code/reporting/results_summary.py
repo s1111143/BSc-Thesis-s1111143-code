@@ -98,15 +98,6 @@ def main() -> None:
             "two_way_effects": two_way,
         },
         "efficiency": efficiency_summary(),
-        "headline": (
-            "Generator model dominates answer quality; no chunking main effect or "
-            "chunking x model interaction is significant under the primary RM-ANOVA "
-            "(all chunking-related partial eta^2 <= 0.006). The ART robustness check "
-            "flags only small extra effects (faithfulness strategy + interaction, "
-            "eta^2 <= 0.02; descriptively GPT orders fixed > structure > semantic, "
-            "Mistral fixed > semantic > structure), so the strategy ranking is "
-            "consistent across models within sampling noise."
-        ),
     }
 
     out_path = ANALYSIS_DIR / "results_summary.json"
